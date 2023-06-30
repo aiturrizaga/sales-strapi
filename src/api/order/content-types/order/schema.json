@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dateOrder": {
+      "type": "datetime"
+    },
+    "amount_total": {
+      "type": "decimal"
+    },
+    "state": {
+      "type": "string"
+    },
+    "pay_method": {
+      "type": "string"
+    },
+    "order_lines": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-line.order-line",
+      "mappedBy": "order"
+    }
+  }
+}
